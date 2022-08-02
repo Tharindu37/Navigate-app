@@ -7,13 +7,11 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  productName: string | null='';
-  constructor(private  _activatedRouter: ActivatedRoute) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this._activatedRouter.paramMap.subscribe(response=>{
-      this.productName = response.get('name')
-    });
+
   }
 
 }
