@@ -1,0 +1,26 @@
+<h1>Customer List</h1>
+<hr>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <td>#</td>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Salary</th>
+    <th>DOB</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customerArray; index as num">
+    <td>{{num+1}}</td>
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.email | sort: 8}}</td>
+    <td>{{customer.salary | currency}}</td>
+    <td>{{customer.dob.toString() | date:'fullDate'}}</td>
+    <td><span class="badge {{customer.status?'bg-primary':'bg-danger'}}">{{customer.status?'Activate':'DeActivated'}}</span></td>
+  </tr>
+  </tbody>
+</table>

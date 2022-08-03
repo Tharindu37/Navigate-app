@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import { OrderComponent } from './components/order/order.component';
 import { PageOneComponent } from './components/order/inner-items/page-one/page-one.component';
 import { PageTwoComponent } from './components/order/inner-items/page-two/page-two.component';
+import {SortPipe} from "./sort.pipe";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PageTwoComponent } from './components/order/inner-items/page-two/page-t
     ItemComponent,
     OrderComponent,
     PageOneComponent,
-    PageTwoComponent
+    PageTwoComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
