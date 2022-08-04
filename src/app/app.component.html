@@ -1,26 +1,29 @@
-<h1>Customer List</h1>
-<hr>
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <td>#</td>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Salary</th>
-    <th>DOB</th>
-    <th>Status</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let customer of customerArray; index as num">
-    <td>{{num+1}}</td>
-    <td>{{customer.id}}</td>
-    <td>{{customer.name}}</td>
-    <td>{{customer.email | sort: 8}}</td>
-    <td>{{customer.salary | currency}}</td>
-    <td>{{customer.dob.toString() | date:'fullDate'}}</td>
-    <td><span class="badge {{customer.status?'bg-primary':'bg-danger'}}">{{customer.status?'Activate':'DeActivated'}}</span></td>
-  </tr>
-  </tbody>
-</table>
+<br>
+<br>
+<div class="container">
+  <form [formGroup]="signUpForm" (ngSubmit)="login()">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input formControlName="email" type="email" id="email" class="form-control">
+          <p *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="alert alert-danger">Email address is required!</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input formControlName="password" type="password" id="password" class="form-control">
+          <p *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="alert alert-danger">Insert a valid password!</p>
+        </div>
+      </div>
+      <br><br><br>
+      <div class="col-6">
+        <div class="form-group">
+          <button [disabled]="!signUpForm.valid" type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

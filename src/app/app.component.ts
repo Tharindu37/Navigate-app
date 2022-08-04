@@ -1,23 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Data} from "@angular/router";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
-export class Customer{
-  id: string;
-  name: string;
-  email: string;
-  salary: number;
-  dob: Data;
-  status: boolean;
 
-  constructor(id: string, name: string, email: string, salary: number,dob: Data, status: boolean) {
-    this.id=id;
-    this.name=name;
-    this.email=email;
-    this.salary=salary;
-    this.dob=dob;
-    this.status=status;
-  }
-}
 
 @Component({
   selector: 'app-root',
@@ -26,14 +11,23 @@ export class Customer{
 })
 export class AppComponent implements OnInit{
   title='';
-  customerArray: Customer[]=[];
 
+  signUpForm: FormGroup;
+
+  constructor(){
+
+    this.signUpForm= new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(10)])
+    });
+
+  }
   ngOnInit(): void {
-    this.customerArray.push(new Customer('C001','Nimal','nimal@gmail.com',25000, new Date(),false));
-    this.customerArray.push(new Customer('C001','Bandara','bandara@gmail.com',125000, new Date(), true));
-    this.customerArray.push(new Customer('C001','Kamal','kamal@gmail.com',25000, new Date(), true));
-    this.customerArray.push(new Customer('C001','Jayantha','jauyantha@gmail.com',25000, new Date() ,true));
-    this.customerArray.push(new Customer('C001','Nihal','nihal@gmail.com',25000, new Date(),false));
 
+
+  }
+
+  login() {
+    
   }
 }

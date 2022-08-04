@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { ItemComponent } from './components/item/item.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OrderComponent } from './components/order/order.component';
 import { PageOneComponent } from './components/order/inner-items/page-one/page-one.component';
 import { PageTwoComponent } from './components/order/inner-items/page-two/page-two.component';
@@ -24,7 +24,8 @@ import {SortPipe} from "./sort.pipe";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
