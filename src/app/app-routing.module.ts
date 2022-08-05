@@ -5,9 +5,13 @@ import {ItemComponent} from "./components/item/item.component";
 import {OrderComponent} from "./components/order/order.component";
 import {PageOneComponent} from "./components/order/inner-items/page-one/page-one.component";
 import {PageTwoComponent} from "./components/order/inner-items/page-two/page-two.component";
+import {PostsComponent} from "./components/posts/posts.component";
+import {CommentsComponent} from "./components/comments/comments.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/customer', pathMatch: 'full'},
+  {path: 'post', component: PostsComponent},
+  {path: 'comment', component: CommentsComponent},
   {path: 'customer', component: CustomerComponent},
   {path: 'item/:name', component: ItemComponent},
   {path: 'order', component: OrderComponent, children: [

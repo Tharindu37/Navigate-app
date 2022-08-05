@@ -12,14 +12,8 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class AppComponent implements OnInit{
   title='';
 
-  signUpForm: FormGroup;
 
   constructor(){
-
-    this.signUpForm= new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(10)])
-    });
 
   }
   ngOnInit(): void {
@@ -28,6 +22,6 @@ export class AppComponent implements OnInit{
   }
 
   login() {
-    
+
   }
 }

@@ -1,0 +1,9 @@
+
+<loading *ngIf="loadingStatus"></loading>
+<ul class="list-group">
+  <li *ngFor="let comment of commentArray" class="list-group-item" aria-current="true">
+    <h3>{{comment.name | uppercase}}</h3>
+    <h6 class="comment-email">{{comment.email}}</h6>
+    <p class="comment-body">{{comment.body}}</p>
+  </li>
+</ul>

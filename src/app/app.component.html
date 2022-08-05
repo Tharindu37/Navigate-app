@@ -1,29 +1,10 @@
 <br>
-<br>
 <div class="container">
-  <form [formGroup]="signUpForm" (ngSubmit)="login()">
-    <div class="row">
-      <div class="col-6">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input formControlName="email" type="email" id="email" class="form-control">
-          <p *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="alert alert-danger">Email address is required!</p>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input formControlName="password" type="password" id="password" class="form-control">
-          <p *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="alert alert-danger">Insert a valid password!</p>
-        </div>
-      </div>
-      <br><br><br>
-      <div class="col-6">
-        <div class="form-group">
-          <button [disabled]="!signUpForm.valid" type="submit" class="btn btn-primary">Login</button>
-        </div>
-      </div>
-    </div>
-  </form>
-
+  <button routerLink="/post" type="button" class="btn btn-primary btn-sm">Load All Posts</button>
+  |
+  <button routerLink="/comment" class="btn btn-primary btn-sm">Load All Comments</button>
+</div>
+<hr>
+<div class="main-outer">
+  <router-outlet></router-outlet>
 </div>

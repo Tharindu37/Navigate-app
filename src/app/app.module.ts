@@ -10,6 +10,10 @@ import { OrderComponent } from './components/order/order.component';
 import { PageOneComponent } from './components/order/inner-items/page-one/page-one.component';
 import { PageTwoComponent } from './components/order/inner-items/page-two/page-two.component';
 import {SortPipe} from "./sort.pipe";
+import { PostsComponent } from './components/posts/posts.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {LoadingComponent} from "./components/loading/loading.component";
 
 @NgModule({
   declarations: [
@@ -19,13 +23,17 @@ import {SortPipe} from "./sort.pipe";
     OrderComponent,
     PageOneComponent,
     PageTwoComponent,
-    SortPipe
+    SortPipe,
+    PostsComponent,
+    CommentsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
